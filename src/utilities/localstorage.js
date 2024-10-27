@@ -7,16 +7,19 @@ const getStoredCart = () => {
     return [];
 }
 
+// to store item on cart
 const saveCartToLS = cart => {
     const cartStringified = JSON.stringify(cart);
     localStorage.setItem('cart', cartStringified);
 }
 // to add new item
-const addToLS = (id) => {
+const addToLS = id => {
     const cart = getStoredCart();
     cart.push(id);
     // save to local storage
-    saveCartToL(cart);
+    saveCartToLS(cart);
 }
+
+export {addToLS,getStoredCart,saveCartToLS}
 
 
